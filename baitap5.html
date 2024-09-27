@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let book = [{
+            author: "JK Rowling",
+            name: "Harry Potter"
+        }, {
+            author: "Stephen King",
+            name: "IT"
+        }, {
+            author: "Jane Austen",
+            name: "Pride and Prejudice"
+        }
+        ];
+
+        let search = prompt("Mời nhập tên tác giả cần tìm");
+        let result = [];
+        for (i = 0; i < book.length; i++) {
+            if (book[i].author == search) {
+                result.push(book[i]);
+            }
+        }
+
+        if (result.length > 0) {
+            console.log(result);
+        } else {
+            console.log("Không có sách cần tìm");
+        }
+    </script>
+</body>
+
+</html>

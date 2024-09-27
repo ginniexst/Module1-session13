@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let contacts = [{
+            name: "contact1",
+            phone: "phone1",
+            email: "contact1@gmail.com"
+        }, {
+            name: "contact2",
+            phone: "phone2",
+            email: "contact2@gmail.com"
+        }, {
+            name: "contact3",
+            phone: "phone3",
+            email: "contact3@gmail.com"
+        }];
+
+        function addContact(name, phone, email) {
+            let contact = {};
+            contact.name = prompt("Mời nhập tên");
+            contact.phone = prompt("Mời nhập số điện thoại");
+            contact.email = prompt("Mời nhập email");
+            return contacts.push(contact);
+        }
+
+        function findContactByName() {
+            let search = prompt("Nhập vào tên cần tìm kiếm");
+            let result = [];
+            for (i = 0; i < contacts.length; i++) {
+                if (contacts[i].name == search) {
+                    result.push(contacts[i]);
+                }
+            }
+            if (result.length > 0) {
+                console.log(result);
+            } else {
+                console.log("Không tìm thấy liên hệ");
+            }
+            return
+        }
+
+        function displayContacts() {
+            for (i = 0; i < contacts.length; i++) {
+                console.log("Liên hệ thứ ", i, ":", contacts[i]);
+            }
+            return contacts;
+        }
+
+        function deleteContactByName(x) {
+            for (i = 0; i < contacts.length; i++) {
+                if (contacts[i].name == x) {
+                    return delete contacts[i];
+                }
+            }
+        }
+
+        function updateContactByName(nm, updateInfo) {
+            for (i = 0; i < contacts.length; i++) {
+                if (contacts[i].name == nm) {
+                    updateInfo
+                }
+            }
+            return contacts;
+        }
+    </script>
+</body>
+</html>

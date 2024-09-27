@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        shoppingCart = [{
+            name: "product1",
+            price: 100,
+            quantity: 100
+        }, {
+            name: "product2",
+            price: 50,
+            quantity: 200
+        }, {
+            name: "product3",
+            price: 90,
+            quantity: 300
+        }];
+
+        function addToCart(productName, price, quantity) {
+            for (i = 0; i < shoppingCart.length; i++) {
+                if (shoppingCart[i].name == productName) {
+                    shoppingCart[i].quantity += quantity;
+                }
+            }
+            return shoppingCart;
+        }
+        let a = "product1";
+        let b = 100;
+        let c = 100;
+        addToCart(a, b, c);
+        console.log(shoppingCart);
+    </script>
+</body>
+</html>

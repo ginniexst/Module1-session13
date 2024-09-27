@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let information = {};
+
+        information.id = prompt("Mời nhập ID");
+        information.name = prompt("Mời nhập tên");
+        information.phone = prompt("Mời nhập số điện thoại");
+        information.address = prompt("Mời nhập địa chỉ");
+
+        console.log(information);
+
+        /* Ex2:
+         Viết chương trình khai báo đối tượng information
+         có các thuộc tính id, name, phone, address.
+         Tiến hành xóa thuộc tính address
+         thêm thuộc tính email cho đối tượng
+         in đối tượng ra màn hình.
+        */
+
+        // Khai báo như bài 1
+
+        // Xoá thuộc tính address
+        delete information.address;
+
+        // Thêm thuộc tính email
+        information.email = "email";
+
+        // In ra màn hình
+        console.log(information);
+    </script>
+</body>
+
+</html>

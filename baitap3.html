@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Nhập vào số lượng sinh viên
+        let stuNum = +prompt("Mời nhập vào số lượng sinh viên")
+
+        // Nhập thông tin mỗi sinh viên, gồm id và name. Lưu vào mảng
+        let arr = []
+        for (i = 0; i < stuNum; i++ ) {
+            let student = {};
+            student.id = prompt("Mời nhập mã sinh viên " + (i + 1));
+            student.name = prompt("Mời nhập tên sinh viên " + (i + 1));
+            arr.push(student);
+        }
+
+        // In mảng ra màn hình
+        console.log(arr);
+
+    </script>
+</body>
+</html>

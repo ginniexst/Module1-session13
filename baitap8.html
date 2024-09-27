@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        
+        // Tạo mảng users có sẵn
+        users = [{
+            id: 1,
+            user_name: "user1",
+            email: "user1@gmail.com",
+            password: "password1"
+        }]
+
+        // Hàm kiểm tra email có tồn tại trong mảng hay không
+        function findEmail(str) {
+            for (i = 0; i < users.length; i++) {
+                if (users[i].email.indexOf(str) != -1) {
+                    return false;
+                }
+            }
+        }
+
+        // Hàm kiểm tra user_name
+        function findUser(username, password) {
+            for (i = 0; i < users.length; i++) {
+                if (users[i].user_name.indexOf(username) != -1
+                    && users[i].password.indexOf(password) != -1) {
+                    return true;
+                }
+            }
+        }
+
+
+        // Nhập lựa chọn:
+        let option = prompt("Mời nhập lựa chọn (1 - 3)");
+
+        // Chọn 1: đăng ký tài khoản
+        if (option == 1) {
+            let user = {};
+            user.id = 1;
+            user.user_name = prompt("Nhập tên người dùng");
+            let x = user.user_name;
+            if (x == "") {
+                user.user_name = prompt("Tên người dùng không được để trống");
+            }
+            user.email = prompt("Nhập địa chỉ email");
+            let y = user.email;
+            if (y == "" || y.indexOf("@") == -1 || 
+            y.indexOf(".") - y.indexOf("@") < 2 || findEmail(y) !== true) {
+                user.email = prompt("Email không hợp lệ hoặc đã sử dụng")
+            }
+            user.password = prompt("Nhập mật khẩu");
+            let z = user.password;
+            if (z = "" || z.length < 8) {
+                user.password = prompt("Mời nhập lại mật khẩu hợp lệ")
+            }
+            users.push(user);
+            console.log(users);
+        } else if (option == 2) {
+            let x = prompt("Mời nhập tên người dùng");
+            let y = prompt("Mời nhập mật khẩu");
+            if (findUser(x, y) === true) {
+                console.log("Đăng nhập thành công");
+            } else {
+                console.log("Đăng nhập thất bại");
+            }
+        } else {
+            console.log("Thoát chương trình");
+        }
+    </script>
+</body>
+
+</html>

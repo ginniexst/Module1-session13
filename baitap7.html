@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // tạo mảng users trống
+        let users = [];
+
+        // Lấy thông tin từ người dùng
+        let user = {};
+        user.id = 1;
+        user.user_name = prompt("Nhập tên người dùng");
+        let x = user.user_name;
+        if (x.length < 3 || x == "") {
+            user.user_name = prompt("Mời nhập lại tên người dùng");
+        }
+        user.email = prompt("Nhập địa chỉ email");
+        let y = user.email;
+        if (y == "" || y.indexOf("@") == -1 || y.indexOf(".") - y.indexOf("@") < 2 ) {
+            user.email = prompt("Mời nhập lại email")
+        }
+        user.password = prompt("Nhập mật khẩu");
+        let z = user.password;
+        if (z = "" || z.length < 8) {
+            user.password = prompt("Mời nhập lại mật khẩu hợp lệ")
+        }
+        users.push(user);
+        console.log(users);
+
+    </script>
+</body>
+
+</html>
